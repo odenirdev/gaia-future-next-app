@@ -191,6 +191,8 @@ export default function Home() {
             <figure
               className="flex justify-center items-center w-[260px] h-[260px] md:w-[360px] md:h-[360px] aspect-video overflow-hidden rounded-3xl"
               onMouseMove={(event) => {
+                if (window.innerWidth < 768) return;
+
                 const SCALE_X = 4;
                 const SCALE_Y = 8;
                 const card = event.currentTarget;
@@ -239,51 +241,80 @@ export default function Home() {
 
             <div className="mx-auto max-w-5xl items-center gap-6 pt-12">
               <div className="flex flex-col justify-center space-y-4">
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <li>
-                    <div className="h-full bg-zinc-900 px-6 py-8 rounded-2xl flex flex-col gap-4 items-center">
+                    <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
                       <Image
                         src="/assets/service-1.svg"
                         alt=""
-                        className="w-24"
+                        className="w-14"
                         width={96}
                         height={96}
                       />
 
-                      <h3 className="text-xl font-bold">
+                      <h3 className="text-md">
                         Desenvolvimento de soluções personalizadas
                       </h3>
                     </div>
                   </li>
                   <li>
-                    <div className="h-full bg-zinc-900 px-6 py-8 rounded-2xl flex flex-col gap-4 items-center">
+                    <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
                       <Image
                         src="/assets/service-2.svg"
                         alt=""
-                        className="w-24"
+                        className="w-14"
                         width={96}
                         height={96}
                       />
 
-                      <h3 className="text-xl font-bold">
+                      <h3 className="text-md">
                         Aplicação de Inteligência Artificial (IA) para o
                         contexto do seu negócio
                       </h3>
                     </div>
                   </li>
                   <li>
-                    <div className="h-full bg-zinc-900 px-6 py-8 rounded-2xl flex flex-col gap-4 items-center">
+                    <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
                       <Image
                         src="/assets/service-3.svg"
                         alt=""
-                        className="w-24"
+                        className="w-14"
                         width={96}
                         height={96}
                       />
 
-                      <h3 className="text-xl font-bold">
+                      <h3 className="text-md">
                         Integrações com Redes Blockchain
                       </h3>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul className="flex flex-col md:flex-row gap-8 justify-center">
+                  <li>
+                    <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
+                      <Image
+                        src="/assets/service-4.svg"
+                        alt=""
+                        className="w-14"
+                        width={96}
+                        height={96}
+                      />
+
+                      <h3 className="text-md">Consultoria Estratégica em TI</h3>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
+                      <Image
+                        src="/assets/service-5.svg"
+                        alt=""
+                        className="w-14"
+                        width={96}
+                        height={96}
+                      />
+
+                      <h3 className="text-md">Resoluções ágeis de problemas</h3>
                     </div>
                   </li>
                 </ul>
@@ -357,9 +388,8 @@ export default function Home() {
             <header className="space-y-3 text-center">
               <h2 className="text-5xl font-bold">Entrar em contato</h2>
               <p className="text-lg mx-auto max-w-[700px] text-zinc-500">
-                Pronto para fazer parceria conosco e criar um futuro mais
-                sustentável? Entre em contato com nossa equipe para discutir seu
-                projeto.
+                Quer desenvolver um software sob medida para o seu negócio? Fale
+                com a nossa equipe e vamos discutir seu projeto.
               </p>
             </header>
 

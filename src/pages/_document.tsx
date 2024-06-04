@@ -1,3 +1,5 @@
+"use client";
+
 import { List } from "@phosphor-icons/react/dist/ssr";
 import { Html, Head, Main, NextScript } from "next/document";
 import Image from "next/image";
@@ -8,6 +10,8 @@ export default function Document() {
   const [openMenu, setOpenMenu] = useState(false);
 
   const onOpenMenuChange = () => {
+    console.log(openMenu);
+
     setOpenMenu(!openMenu);
   };
 
@@ -108,10 +112,7 @@ export default function Document() {
           property="og:description"
           content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde. Criamos soluções digitais inovadoras com foco na responsabilidade ambiental e no impacto social."
         />
-        <meta
-          property="og:image"
-          content="/assets/hero.jpg"
-        />
+        <meta property="og:image" content="/assets/hero.jpg" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://metatags.io/" />
@@ -120,33 +121,39 @@ export default function Document() {
           property="twitter:description"
           content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde. Criamos soluções digitais inovadoras com foco na responsabilidade ambiental e no impacto social."
         />
-        <meta
-          property="twitter:image"
-          content="/assets/hero.jpg"
-        />
+        <meta property="twitter:image" content="/assets/hero.jpg" />
       </Head>
       <body>
         <header className="flex items-center justify-between h-[6.875rem] w-full mx-auto px-9 absolute z-[10]">
           <Image src="/assets/logo.svg" alt="" width={44} height={44} />
 
-          <button
-            className="md:hidden"
-            type="button"
-            onClick={onOpenMenuChange}
-          >
-            <List size={44} />
-          </button>
+          <input type="checkbox" id="menu-toggle" className="hidden peer" />
+          <label htmlFor="menu-toggle" className="cursor-pointer md:hidden">
+            <svg
+              className="w-6 h-6 text-zinc-20"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </label>
 
           <nav
-            className="data-[show=true]:block hidden absolute left-0 top-[6.875rem] w-full px-4 md:static md:block md:w-fit"
-            data-show={openMenu}
+            id="menu"
+            className="hidden absolute left-0 top-[6.875rem] w-full px-4  md:static md:block md:w-fit"
           >
-            <ul className="flex flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4">
+            <ul className="flex flex-1 flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4">
               <li>
                 <Link
                   href="#services"
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  prefetch={false}
                 >
                   Serviços
                 </Link>
@@ -156,7 +163,6 @@ export default function Document() {
                 <Link
                   href="#sustainability"
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  prefetch={false}
                 >
                   Sustentabilidade
                 </Link>
@@ -166,7 +172,6 @@ export default function Document() {
                 <Link
                   href="#get-in-touch"
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  prefetch={false}
                 >
                   Contato
                 </Link>

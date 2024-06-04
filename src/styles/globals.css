@@ -21,4 +21,8 @@
   h6 {
     font-family: var(--font-ubuntu-mono), serif;
   }
+
+  #menu-toggle:checked ~ #menu {
+    display: flex;
+  }
 }
