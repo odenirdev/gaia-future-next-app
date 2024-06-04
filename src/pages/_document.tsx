@@ -1,20 +1,10 @@
 "use client";
 
-import { List } from "@phosphor-icons/react/dist/ssr";
 import { Html, Head, Main, NextScript } from "next/document";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Document() {
-  const [openMenu, setOpenMenu] = useState(false);
-
-  const onOpenMenuChange = () => {
-    console.log(openMenu);
-
-    setOpenMenu(!openMenu);
-  };
-
   return (
     <Html lang="en">
       <Head>

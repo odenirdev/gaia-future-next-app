@@ -117,7 +117,7 @@ export default function Home() {
         trigger: "#get-in-touch",
         toggleActions: "play none reverse none",
         start: "top 600",
-        end: "center 250",
+        end: "150 600",
       },
     });
     tl4.fromTo(
@@ -136,7 +136,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | Gaia Future Lab</title>
+        <title>Home | Gaia Future lab.</title>
         <meta
           name="description"
           content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde. Criamos soluções digitais inovadoras com foco na responsabilidade ambiental e no impacto social."
@@ -161,7 +161,7 @@ export default function Home() {
             <div className="flex flex-col gap-8">
               <div className="space-y-2 max-w-xl">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
-                  Gaia Future lab
+                  Gaia Future lab.
                 </h1>
                 <p className="text-zinc-300 text-md md:text-lg">
                   Desenvolvimento sustentável de software para um futuro mais
