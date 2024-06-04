@@ -102,7 +102,7 @@ export default function Document() {
         <meta name="theme-color" content="#ffffff" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:url" content="https://gaia-future-lab.vercel.app" />
         <meta property="og:title" content="Gaia Future lab." />
         <meta
           property="og:description"
@@ -110,7 +110,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://metatags.io/images/meta-tags.png"
+          content="/assets/hero.jpg"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -122,7 +122,7 @@ export default function Document() {
         />
         <meta
           property="twitter:image"
-          content="https://metatags.io/images/meta-tags.png"
+          content="/assets/hero.jpg"
         />
       </Head>
       <body>
