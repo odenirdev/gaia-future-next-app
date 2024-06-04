@@ -229,19 +229,19 @@ export default function Home() {
                 Nossos Serviços
               </div>
 
-              <h2 className="text-6xl/tight font-bold tracking-tighter">
+              <h2 className="text-4xl md:text-6xl/tight font-bold tracking-tighter">
                 Soluções de Software
               </h2>
-              <p className="max-w-[900px] text-zinc-500 text-xl/relaxed">
+              <p className="max-w-[900px] text-zinc-500 text-md md:text-xl/relaxed">
                 Desde aplicações web personalizadas até aplicações móveis,
                 oferecemos soluções digitais de ponta que impulsionam mudanças
                 positivas para seu negócio.
               </p>
             </header>
 
-            <div className="mx-auto max-w-5xl items-center gap-6 pt-12">
+            <div className="mx-auto max-w-5xl items-center gap-6 pt-6 md:pt-12">
               <div className="flex flex-col justify-center space-y-4">
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                   <li>
                     <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
                       <Image
@@ -290,7 +290,7 @@ export default function Home() {
                   </li>
                 </ul>
 
-                <ul className="flex flex-col md:flex-row gap-8 justify-center">
+                <ul className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center">
                   <li>
                     <div className="bg-zinc-900 px-6 py-4 rounded-2xl flex gap-4 items-center h-full">
                       <Image
@@ -330,20 +330,20 @@ export default function Home() {
                 <div className="inline-block rounded-lg bg-green-900 px-3 py-1 text-sm">
                   Sustentabilidade
                 </div>
-                <h2 className="text-4xl/tight font-bold">
+                <h2 className="text-3xl md:text-4xl/tight font-bold">
                   Comprometidos com um futuro mais verde
                 </h2>
               </header>
 
               <section>
                 <div className="space-y-4">
-                  <p className="max-w-[600px] text-zinc-500 text-lg">
+                  <p className="max-w-[600px] text-zinc-500 text-md md:text-lg">
                     Na Gaia Future Lab, acreditamos que a tecnologia pode ser
                     uma força poderosa para mudanças positivas. Por isso, nos
                     dedicamos a desenvolver soluções inovadoras que impulsionam
                     transformações positivas para seu negócio e o mundo.
                   </p>
-                  <p className="max-w-[600px] text-zinc-500 text-lg">
+                  <p className="max-w-[600px] text-zinc-500 text-md md:text-lg">
                     Estamos comprometidos com a construção de um futuro verde,
                     adotando práticas empresariais responsáveis que contribuem
                     para um planeta mais saudável. Nossa missão é integrar
@@ -385,9 +385,11 @@ export default function Home() {
 
         <article id="get-in-touch" className="w-full py-24 bg-zinc-800">
           <div className="max-w-5xl mx-auto px-4 flex flex-col gap-4">
-            <header className="space-y-3 text-center">
-              <h2 className="text-5xl font-bold">Entrar em contato</h2>
-              <p className="text-lg mx-auto max-w-[700px] text-zinc-500">
+            <header className="space-y-1 md:space-y-2 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold">
+                Entrar em contato
+              </h2>
+              <p className="text-md md:text-lg mx-auto max-w-[700px] text-zinc-500">
                 Quer desenvolver um software sob medida para o seu negócio? Fale
                 com a nossa equipe e vamos discutir seu projeto.
               </p>
