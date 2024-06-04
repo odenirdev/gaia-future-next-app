@@ -14,7 +14,7 @@ export default function Home() {
     var tl1 = gsap.timeline();
 
     tl1.fromTo(
-      "#hero > div > div",
+      "#hero > div > section",
       {
         opacity: 0,
         x: -100,
@@ -147,18 +147,22 @@ export default function Home() {
           id="hero"
           className="w-full min-h-[calc(100vh-4rem)] pt-[6.875rem] pb-[3rem] md:pb-[6.875rem] relative flex items-center"
         >
-          <video
-            muted
-            autoPlay
-            loop
-            className="absolute z-[-2] object-cover top-0 left-0 h-full w-full"
-          >
-            <source src="/assets/bg-hero.mp4" type="video/mp4" />
-          </video>
-          <div className="bg-[#000]/[0.65] absolute z-[-2] inset-0"></div>
+          <div className="absolute inset-0">
+            <Image
+              width={1920}
+              height={1080}
+              src="/assets/bg-hero.gif"
+              alt=""
+              className="absolute z-[-2] object-cover top-0 left-0 h-full w-full"
+              unoptimized
+              priority
+            />
+
+            <div className="bg-[#000]/[0.65] absolute z-[-2] inset-0"></div>
+          </div>
 
           <div className="max-w-5xl w-full mx-auto flex flex-col px-8 md:flex-row gap-8 md:gap-4 items-center">
-            <div className="flex flex-col gap-8">
+            <section className="flex flex-col gap-8">
               <div className="space-y-2 max-w-xl">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
                   Gaia Future lab.
@@ -186,7 +190,7 @@ export default function Home() {
                   Saber mais
                 </Link>
               </div>
-            </div>
+            </section>
 
             <figure
               className="flex justify-center items-center w-[260px] h-[260px] md:w-[360px] md:h-[360px] aspect-video overflow-hidden rounded-3xl"
