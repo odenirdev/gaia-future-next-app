@@ -117,7 +117,7 @@ export default function Home() {
         trigger: "#get-in-touch",
         toggleActions: "play none reverse none",
         start: "top 600",
-        end: "center 600",
+        end: "center 250",
       },
     });
     tl4.fromTo(
