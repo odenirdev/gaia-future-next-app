@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Head from "next/head";
 
 export default function Home() {
   useEffect(() => {
@@ -134,6 +135,13 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Home | Gaia Future Lab</title>
+        <meta
+          name="description"
+          content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde. Criamos soluções digitais inovadoras com foco na responsabilidade ambiental e no impacto social."
+        />
+      </Head>
       <main className="flex-1">
         <article
           id="hero"
