@@ -153,12 +153,10 @@ export default function Home() {
               height={1080}
               src="/assets/bg-hero.gif"
               alt=""
-              className="absolute z-[-2] object-cover top-0 left-0 h-full w-full"
+              className="absolute z-[-1] object-cover top-0 left-0 h-full w-full mix-blend-overlay"
               unoptimized
               priority
             />
-
-            <div className="bg-[#000]/[0.65] absolute z-[-2] inset-0"></div>
           </div>
 
           <div className="max-w-5xl w-full mx-auto flex flex-col px-8 md:flex-row gap-8 md:gap-4 items-center">
@@ -167,7 +165,7 @@ export default function Home() {
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
                   Gaia Future lab.
                 </h1>
-                <p className="text-zinc-300 text-md md:text-lg">
+                <p className="text-md md:text-lg text-zinc-400">
                   Codificando o Futuro. Somos uma empresa de engenharia de
                   software com uma forte pegada sustentável.
                 </p>
