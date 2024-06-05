@@ -11,7 +11,7 @@ export default function Document() {
         <meta name="title" content="Gaia Future lab." />
         <meta
           name="description"
-          content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde."
+          content="Codificando o Futuro. Somos uma empresa de engenharia de software preocupada com o futuro verde do planeta."
         />
         <meta
           name="keywords"
@@ -100,7 +100,7 @@ export default function Document() {
         <meta property="og:title" content="Gaia Future lab." />
         <meta
           property="og:description"
-          content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde. Criamos soluções digitais inovadoras com foco na responsabilidade ambiental e no impacto social."
+          content="Codificando o Futuro. Somos uma empresa de engenharia de software com uma pegada sustentável."
         />
         <meta property="og:image" content="/assets/hero.jpg" />
 
@@ -109,13 +109,15 @@ export default function Document() {
         <meta property="twitter:title" content="Gaia Future lab." />
         <meta
           property="twitter:description"
-          content="Codificando o Futuro. Desenvolvimento sustentável de software para um futuro mais verde. Criamos soluções digitais inovadoras com foco na responsabilidade ambiental e no impacto social."
+          content="Codificando o Futuro. Somos uma empresa de engenharia de software com uma pegada sustentável."
         />
         <meta property="twitter:image" content="/assets/hero.jpg" />
       </Head>
       <body>
         <header className="flex items-center justify-between h-[6.875rem] w-full mx-auto px-9 absolute z-[10]">
-          <Image src="/assets/logo.svg" alt="" width={44} height={44} />
+          <Link href="/">
+            <Image src="/assets/logo.svg" alt="" width={44} height={44} />
+          </Link>
 
           <input type="checkbox" id="menu-toggle" className="hidden peer" />
           <label htmlFor="menu-toggle" className="cursor-pointer md:hidden">
@@ -142,7 +144,7 @@ export default function Document() {
             <ul className="flex flex-1 flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4">
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-sm font-medium hover:underline underline-offset-4"
                 >
                   Serviços
@@ -151,7 +153,7 @@ export default function Document() {
 
               <li>
                 <Link
-                  href="#sustainability"
+                  href="/#sustainability"
                   className="text-sm font-medium hover:underline underline-offset-4"
                 >
                   Sustentabilidade
@@ -160,7 +162,7 @@ export default function Document() {
 
               <li>
                 <Link
-                  href="#get-in-touch"
+                  href="/contact"
                   className="text-sm font-medium hover:underline underline-offset-4"
                 >
                   Contato

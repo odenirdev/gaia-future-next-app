@@ -137,10 +137,6 @@ export default function Home() {
     <>
       <Head>
         <title>Home | Gaia Future lab.</title>
-        <meta
-          name="description"
-          content="Codificando o Futuro. Somos uma empresa de engenharia de software com uma forte pegada sustentável. "
-        />
       </Head>
       <main className="flex-1">
         <article
@@ -167,7 +163,7 @@ export default function Home() {
                 </h1>
                 <p className="text-md md:text-lg text-zinc-400">
                   Codificando o Futuro. Somos uma empresa de engenharia de
-                  software com uma forte pegada sustentável.
+                  software preocupada com o futuro verde do planeta.
                 </p>
               </div>
 
