@@ -96,7 +96,7 @@ export default function Document() {
         <meta name="theme-color" content="#ffffff" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://gaia-future-lab.vercel.app" />
+        <meta property="og:url" content="https://gaiafuture.com.br" />
         <meta property="og:title" content="Gaia Future lab." />
         <meta
           property="og:description"
@@ -159,6 +159,15 @@ export default function Document() {
                   Sustentabilidade
                 </Link>
               </li>
+
+              {/* <li>
+                <Link
+                  href="/about-us"
+                  className="text-sm font-medium hover:underline underline-offset-4"
+                >
+                  Sobre nós
+                </Link>
+              </li> */}
 
               <li>
                 <Link

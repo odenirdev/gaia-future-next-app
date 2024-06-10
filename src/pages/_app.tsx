@@ -17,10 +17,14 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+import { GoogleTagManager } from "@next/third-parties/google";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${ubuntuMono.variable} ${inter.variable}`}>
       <Component {...pageProps} />
+
+      <GoogleTagManager gtmId="G-36035J45Y8" />
     </main>
   );
 }

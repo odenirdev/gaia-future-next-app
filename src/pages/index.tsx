@@ -143,13 +143,13 @@ export default function Home() {
           id="hero"
           className="w-full min-h-[calc(100vh-4rem)] pt-[6.875rem] pb-[3rem] md:pb-[6.875rem] relative flex items-center"
         >
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 z-[-1] mix-blend-overlay">
             <Image
               width={1920}
               height={1080}
               src="/assets/bg-hero.gif"
               alt=""
-              className="absolute z-[-1] object-cover top-0 left-0 h-full w-full mix-blend-overlay"
+              className="object-cover h-full w-full"
               unoptimized
               priority
             />
