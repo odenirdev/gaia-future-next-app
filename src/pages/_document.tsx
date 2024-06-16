@@ -144,6 +144,15 @@ export default function Document() {
             <ul className="flex flex-1 flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4">
               <li>
                 <Link
+                  href="/"
+                  className="text-sm font-medium hover:underline underline-offset-4"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   href="/#services"
                   className="text-sm font-medium hover:underline underline-offset-4"
                 >
@@ -160,14 +169,14 @@ export default function Document() {
                 </Link>
               </li>
 
-              {/* <li>
+              <li>
                 <Link
                   href="/about-us"
                   className="text-sm font-medium hover:underline underline-offset-4"
                 >
                   Sobre nós
                 </Link>
-              </li> */}
+              </li>
 
               <li>
                 <Link

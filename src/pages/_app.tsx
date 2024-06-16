@@ -22,9 +22,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${ubuntuMono.variable} ${inter.variable}`}>
-      <Component {...pageProps} />
-
       <GoogleAnalytics gaId="G-36035J45Y8" />
+      <Component {...pageProps} />
     </main>
   );
 }
