@@ -4,14 +4,15 @@ import { tv } from "tailwind-variants";
 export const typography = tv({
   variants: {
     as: {
-      h1: "text-font font-bold tracking-tighter md:leading-tighter text-4xl md:text-6xl/tight",
+      h1: "text-font font-bold tracking-tighter md:leading-tighter text-5xl md:text-7xl/tight lg:text-7xl/tight",
       h2: "text-3xl md:text-5xl/tight font-bold tracking-tighter md:leading-tighter",
       h3: "text-font text-2xl font-bold",
       h4: "text-font text-md md:text-xl font-bold",
       h5: "text-font text-sm md:text-md font-bold",
-      p: "text-font text-md md:text-md text-zinc-500",
+      p: "text-font text-md md:text-lg",
       span: "text-font text-base",
       strong: "text-font font-bold",
+      subtitle: "inline-block text-xl md:text-2xl tracking-tighter md:leading-tighter text-zinc-400",
       "pre-title":
         "inline-block rounded-lg bg-green-900 px-3 py-1 text-[0.75rem] md:text-sm",
     },
@@ -19,7 +20,17 @@ export const typography = tv({
 });
 
 type TypographyProps = {
-  as: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span" | "strong" | "pre-title";
+  as:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "p"
+    | "span"
+    | "strong"
+    | "pre-title"
+    | "subtitle";
   children?: React.ReactNode;
   className?: string;
 };
@@ -77,6 +88,12 @@ export const Typography = ({ as, children, className }: TypographyProps) => {
     case "pre-title":
       return (
         <span className={twMerge(typography({ as: "pre-title" }), className)}>
+          {children}
+        </span>
+      );
+    case "subtitle":
+      return (
+        <span className={twMerge(typography({ as: "subtitle" }), className)}>
           {children}
         </span>
       );

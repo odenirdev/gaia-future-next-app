@@ -5,8 +5,9 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "./Typography";
-import { Button } from "./Button";
+import { Typography } from "../Typography";
+import { Button } from "../Button";
+import { Container } from "../Container";
 
 export const Sustainability = () => {
   useEffect(() => {
@@ -60,7 +61,7 @@ export const Sustainability = () => {
 
   return (
     <section id="sustainability" className="w-full py-12 md:py-24">
-      <div className="mx-auto max-w-5xl px-4 flex flex-col md:flex-row gap-8 items-center justify-between">
+      <Container className="flex flex-col md:flex-row gap-8 items-center justify-between">
         <div className="w-full max-w-[36rem]">
           <header className="mb-4">
             <Typography as="pre-title">Sustentabilidade</Typography>
@@ -101,7 +102,7 @@ export const Sustainability = () => {
           </section>
         </div>
 
-        <figure className="flex justify-center items-center w-full max-w-[360px] h-[360px] aspect-video overflow-hidden shadow-md rounded-3xl">
+        <figure className="w-full max-w-[380px] h-[380px] mx-auto overflow-hidden rounded-3xl">
           <Image
             src="/assets/hero.jpg"
             width="600"
@@ -110,7 +111,7 @@ export const Sustainability = () => {
             className="h-full w-full object-cover"
           />
         </figure>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -6,7 +6,7 @@ const Root = ({ children, className, ...props }: ComponentProps<"div">) => {
   return (
     <div
       {...props}
-      className={twMerge("bg-zinc-700 px-6 py-4 rounded-2xl h-full", className)}
+      className={twMerge("bg-zinc-600 px-6 py-4 rounded-2xl h-full", className)}
     >
       {children}
     </div>

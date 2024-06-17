@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { tv } from "tailwind-variants";
 
 const button = tv({
-  base: "text-center min-h-[2.5rem] py-1 px-8 items-center justify-center rounded-md text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-600",
+  base: "text-center min-h-[2.5rem] py-1 px-8 items-center justify-center rounded-md text-md font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-600",
   variants: {
     variant: {
       primary: "bg-green-600 text-zinc-50 hover:bg-green-700",

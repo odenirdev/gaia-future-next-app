@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt-BR">
       <Head>
         <meta name="title" content="Gaia Future lab." />
         <meta
@@ -15,7 +15,7 @@ export default function Document() {
         />
         <meta
           name="keywords"
-          content="desenvolvimento de software personalizado, desenvolvimento de aplicativos personalizados, soluções de software sob medida, desenvolvimento personalizado de sistemas, desenvolvimento de software corporativo, desenvolvimento de software empresarial, desenvolvimento de software à medida, desenvolvimento de software especializado, desenvolvimento de software customizado, desenvolvimento de software de qualidade, desenvolvimento de software de alta performance, desenvolvimento de software orientado a negócios, desenvolvimento de software para empresas, desenvolvimento de software profissional, desenvolvimento de software de última geração, desenvolvimento de software inovador, soluções de software adaptadas, desenvolvimento de software ágil, desenvolvimento de software de ponta, desenvolvimento de software de classe mundial"
+          content="desenvolvimento de software personalizado, desenvolvimento de aplicativos personalizados, soluções de software sob medida, desenvolvimento personalizado de sistemas, desenvolvimento de software corporativo, desenvolvimento de software empresarial, desenvolvimento de software à medida, desenvolvimento de software especializado, desenvolvimento de software customizado, desenvolvimento de software de qualidade, desenvolvimento de software de alta performance, desenvolvimento de software orientado a negócios, desenvolvimento de software para empresas, desenvolvimento de software profissional, desenvolvimento de software de última geração, desenvolvimento de software inovador, soluções de software adaptadas, desenvolvimento de software ágil, desenvolvimento de software de ponta, desenvolvimento de software de classe mundial, gaia, future, software house"
         />
         <meta name="robots" content="index, follow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

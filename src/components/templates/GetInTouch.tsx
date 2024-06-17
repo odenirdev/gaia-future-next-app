@@ -1,11 +1,15 @@
-import { useEffect } from "react";
+import { ComponentProps, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Button } from "./Button";
-import { Typography } from "./Typography";
+import { Button } from "../Button";
+import { Typography } from "../Typography";
+import { Container } from "../Container";
+import { twMerge } from "tailwind-merge";
 
-export const GetInTouch = () => {
+type GetInTouchProps = ComponentProps<"section">;
+
+export const GetInTouch = ({ className, ...props }: GetInTouchProps) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap
@@ -31,8 +35,12 @@ export const GetInTouch = () => {
   }, []);
 
   return (
-    <section id="get-in-touch" className="w-full py-24 bg-zinc-800">
-      <div className="mx-auto max-w-5xl px-4 space-y-8">
+    <section
+      id="get-in-touch"
+      className={twMerge("w-full py-24 bg-zinc-700", className)}
+      {...props}
+    >
+      <Container className="space-y-8">
         <header className="space-y-1 md:space-y-2 text-center">
           <Typography as="h2">Entrar em contato</Typography>
           <Typography as="p" className="max-w-[44rem] mx-auto">
@@ -53,7 +61,7 @@ export const GetInTouch = () => {
             Entraremos em contato com você o mais breve possível.
           </Typography>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import { AboutUsHero } from "@/components/AboutUsHero";
-import { OurValues } from "@/components/OurValues";
-import { OurTeam } from "@/components/OurTeam";
-import { Services } from "@/components/Services";
-import { GetInTouch } from "@/components/GetInTouch";
+import { AboutUsHero } from "@/components/templates/AboutUsHero";
+import { OurValues } from "@/components/templates/OurValues";
+import { OurTeam } from "@/components/templates/OurTeam";
+import { GetInTouch } from "@/components/templates/GetInTouch";
+import { Services } from "@/components/templates/Services";
 
 export default function AboutUs() {
   return (
@@ -19,9 +19,9 @@ export default function AboutUs() {
 
         <OurTeam />
 
-        <Services className="bg-zinc-900" />
+        <Services />
 
-        <GetInTouch />
+        <GetInTouch className="bg-zinc-800" />
       </main>
     </>
   );

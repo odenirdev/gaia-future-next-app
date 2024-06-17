@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-zinc-900 text-zinc-200;
+    @apply bg-zinc-800 text-zinc-100;
 
     font-family: var(--font-inter), serif;
   }

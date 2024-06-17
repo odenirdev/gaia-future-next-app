@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "./Typography";
-import { Card } from "./Card";
+import { Typography } from "../Typography";
+import { Card } from "../Card";
+import { Container } from "../Container";
 
 export const OurValues = () => {
   useEffect(() => {
@@ -42,20 +43,20 @@ export const OurValues = () => {
   }, []);
 
   return (
-    <section className="w-full py-12 md:py-24" id="our-values">
-      <div className="container px-4 md:px-6 space-y-12 mx-auto max-w-5xl">
+    <section className="w-full py-12 md:py-24 bg-zinc-700" id="our-values">
+      <Container className="space-y-12">
         <header className="flex flex-col items-center justify-center text-center space-y-2">
           <Typography as="pre-title">Nossos Valores</Typography>
           <Typography as="h2">Impulsionando mudanças positivas</Typography>
-          <Typography as="p" className="max-w-3xl text-lg md:text-xl">
+          <Typography as="subtitle">
             Na GaiaFuture, somos guiados por um conjunto de valores fundamentais
             que moldar nossa abordagem à tecnologia sustentável e ao meio
             ambiente responsabilidade.
           </Typography>
         </header>
 
-        <section className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
-          <Card.Root className="space-y-4 bg-zinc-800">
+        <section className="mx-auto grid max-w-5xl md:max-w-[1440px] items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
+          <Card.Root className="space-y-4">
             <div className="flex justify-center">
               <Image
                 src="/assets/value-1.svg"
@@ -67,7 +68,7 @@ export const OurValues = () => {
             </div>
             <div className="space-y-1">
               <Card.Title as="h3">Inovação</Card.Title>
-              <Card.Description as="p">
+              <Card.Description as="p" className="text-zinc-400">
                 Estamos empenhados em ultrapassar os limites da tecnologia
                 sustentável, explorando constantemente soluções novas e
                 inovadoras para impulsionar mudanças positivas.
@@ -75,7 +76,7 @@ export const OurValues = () => {
             </div>
           </Card.Root>
 
-          <Card.Root className="space-y-4 bg-zinc-800">
+          <Card.Root className="space-y-4">
             <div className="flex justify-center">
               <Image
                 src="/assets/value-2.svg"
@@ -87,7 +88,7 @@ export const OurValues = () => {
             </div>
             <div className="space-y-1">
               <Card.Title as="h3">Sustentabilidade</Card.Title>
-              <Card.Description as="p">
+              <Card.Description as="p" className="text-zinc-400">
                 A sustentabilidade está no centro de tudo o que fazemos.
                 Dedicamo-nos a desenvolver soluções que minimizem o nosso
                 impacto ambiental e promovam a sustentabilidade a longo prazo.
@@ -95,7 +96,7 @@ export const OurValues = () => {
             </div>
           </Card.Root>
 
-          <Card.Root className="space-y-4 bg-zinc-800">
+          <Card.Root className="space-y-4">
             <div className="flex justify-center">
               <Image
                 src="/assets/value-3.svg"
@@ -107,7 +108,7 @@ export const OurValues = () => {
             </div>
             <div className="space-y-1">
               <Card.Title as="h3">Colaboração</Card.Title>
-              <Card.Description as="p">
+              <Card.Description as="p" className="text-zinc-400">
                 Acreditamos que trabalhando juntos, podemos alcançar coisas
                 maiores. Nossa abordagem colaborativa promove a comunicação
                 aberta, o conhecimento compartilhado e a resolução coletiva de
@@ -116,7 +117,7 @@ export const OurValues = () => {
             </div>
           </Card.Root>
         </section>
-      </div>
+      </Container>
     </section>
   );
 };

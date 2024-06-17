@@ -2,10 +2,10 @@
 
 import Head from "next/head";
 
-import { Hero } from "@/components/Hero";
-import { Services } from "@/components/Services";
-import { Sustainability } from "@/components/Sustainability";
-import { GetInTouch } from "@/components/GetInTouch";
+import { Hero } from "@/components/templates/Hero";
+import { Sustainability } from "@/components/templates/Sustainability";
+import { GetInTouch } from "@/components/templates/GetInTouch";
+import { Services } from "@/components/templates/Services";
 
 export default function Home() {
   return (

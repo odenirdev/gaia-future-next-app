@@ -6,8 +6,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { useAnimations } from "@/hooks/useAnimations";
 
-import { Typography } from "./Typography";
-import { Button } from "./Button";
+import { Typography } from "../Typography";
+import { Button } from "../Button";
+import { Container } from "../Container";
 
 export const Hero = () => {
   const { onMousePerspectiveAnimation } = useAnimations();
@@ -65,28 +66,30 @@ export const Hero = () => {
         />
       </div>
 
-      <div className="mx-auto max-w-5xl flex flex-col px-8 md:flex-row gap-8 md:gap-4 items-center">
+      <Container className="flex flex-col px-8 md:flex-row gap-8 md:gap-4 items-center">
         <section className="flex flex-col gap-8">
-          <div className="space-y-2 max-w-xl">
+          <div className="space-y-2 max-w-xl flex-1">
             <Typography as="h1">Gaia Future lab.</Typography>
-            <Typography as="p">
+            <Typography as="subtitle" className="text-zinc-100">
               Codificando o Futuro. Somos uma empresa de engenharia de software
               preocupada com o futuro verde do planeta.
             </Typography>
           </div>
 
-          <div className="flex gap-2">
-            <Link href="#get-in-touch" className="" prefetch={false}>
-              <Button>Entrar em contato</Button>
+          <div className="flex flex-col md:flex-row gap-2 ">
+            <Link href="#get-in-touch" prefetch={false}>
+              <Button className="w-full">Entrar em contato</Button>
             </Link>
             <Link href="#services" prefetch={false}>
-              <Button variant="secondary">Saber mais</Button>
+              <Button variant="secondary" className="w-full">
+                Saber mais
+              </Button>
             </Link>
           </div>
         </section>
 
         <figure
-          className="flex justify-center items-center w-[260px] h-[260px] md:w-[360px] md:h-[360px] aspect-video overflow-hidden rounded-3xl"
+          className="w-[260px] h-[260px] md:w-[360px] md:h-[360px] mx-auto"
           onMouseMove={onMousePerspectiveAnimation}
         >
           <Image
@@ -97,7 +100,7 @@ export const Hero = () => {
             className="h-full w-full object-center drop-shadow-xl"
           />
         </figure>
-      </div>
+      </Container>
     </section>
   );
 };

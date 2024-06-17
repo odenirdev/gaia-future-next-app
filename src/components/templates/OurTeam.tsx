@@ -5,7 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { useAnimations } from "@/hooks/useAnimations";
 
-import { Typography } from "./Typography";
+import { Typography } from "../Typography";
+import { Container } from "../Container";
 
 export const OurTeam = () => {
   const { onMousePerspectiveAnimation } = useAnimations();
@@ -24,11 +25,9 @@ export const OurTeam = () => {
       .fromTo(
         "#our-team header",
         {
-          x: 100,
           opacity: 0,
         },
         {
-          x: 0,
           opacity: 1,
           ease: "power1.in",
           duration: 0.4,
@@ -48,12 +47,12 @@ export const OurTeam = () => {
 
   return (
     <section className="bg-zinc-800 w-full py-12 md:py-24" id="our-team">
-      <div className="container px-4 md:px-6 space-y-12 mx-auto max-w-5xl">
+      <Container className="space-y-12">
         <header className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <Typography as="pre-title">Nossa Equipe</Typography>
             <Typography as="h2">Conheça a equipe do Gaia Future Lab</Typography>
-            <Typography as="p" className="max-w-3xl text-lg md:text-xl">
+            <Typography as="subtitle" className="max-w-4xl">
               Nossa equipe de profissionais apaixonados e experientes está
               dedicada a criar um futuro sustentável através de soluções
               inovadoras Soluções de software.
@@ -61,7 +60,7 @@ export const OurTeam = () => {
           </div>
         </header>
 
-        <section className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
+        <section className="mx-auto grid max-w-5xl md:max-w-[1440px] items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
           <div className="space-y-4 px-6 py-4 h-full">
             <div className="flex justify-center">
               <Image
@@ -148,7 +147,7 @@ export const OurTeam = () => {
             </div>
           </div>
         </section>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -3,11 +3,13 @@ import { ComponentProps, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "./Typography";
-import { Card } from "./Card";
+import { Typography } from "../Typography";
+import { Card } from "../Card";
 import { twMerge } from "tailwind-merge";
+import { Container } from "../Container";
 
 type ServicesProps = ComponentProps<"section">;
+
 
 export const Services = ({ className, ...props }: ServicesProps) => {
   useEffect(() => {
@@ -47,22 +49,22 @@ export const Services = ({ className, ...props }: ServicesProps) => {
   return (
     <section
       id="services"
-      className={twMerge("w-full py-12 md:py-24 bg-zinc-800", className)}
+      className={twMerge("w-full py-12 md:py-24 bg-zinc-700", className)}
       {...props}
     >
-      <div className="mx-auto max-w-5xl px-4 space-y-8">
+      <Container className="space-y-8">
         <header className="flex flex-col items-center justify-center text-center space-y-2">
           <Typography as="pre-title">Nossos Serviços</Typography>
 
           <Typography as="h2">Soluções de Software</Typography>
-          <Typography as="p" className="md:text-2xl">
+          <Typography as="subtitle">
             Desde aplicações web personalizadas até aplicações móveis,
             oferecemos soluções digitais de ponta que impulsionam mudanças
             positivas para seu negócio.
           </Typography>
         </header>
 
-        <div className="mx-auto max-w-5xl items-center gap-6">
+        <div className="mx-auto max-w-5xl md:max-w-[1440px] items-center gap-6">
           <div className="flex flex-col space-y-4">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <li>
@@ -140,7 +142,7 @@ export const Services = ({ className, ...props }: ServicesProps) => {
             </ul>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
