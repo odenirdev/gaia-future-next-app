@@ -21,46 +21,22 @@ export const AboutUsHero = () => {
         },
       })
       .fromTo(
-        "#about-us-hero section header h1",
+        "#about-us-hero .container > header",
         {
           opacity: 0,
-          x: -100,
         },
         {
-          x: 0,
           opacity: 1,
           ease: "power1.in",
-          duration: 0.6,
+          duration: 0.4,
         }
       )
       .fromTo(
-        "#about-us-hero section header p",
+        "#about-us-hero .container > div",
         {
           opacity: 0,
-          x: -100,
         },
         {
-          x: 0,
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.6,
-        }
-      )
-      .fromTo(
-        "#about-us-hero section section section",
-        { opacity: 0, x: -100 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.6,
-        }
-      )
-      .fromTo(
-        "#about-us-hero section section footer",
-        { opacity: 0, x: -100 },
-        {
-          x: 0,
           opacity: 1,
           ease: "power1.in",
           duration: 0.6,
@@ -85,38 +61,21 @@ export const AboutUsHero = () => {
         />
       </div>
 
-      <Container className="grid md:grid-cols-2 gap-4 md:gap-8">
-        <header>
-          <Typography as="h1">Codificando o Futuro</Typography>
-          <Typography as="subtitle"  className="text-zinc-100">
-            Somos uma empresa de engenharia de software preocupada com o futuro
-            verde do planeta.
+      <Container className="space-y-8">
+        <header className="max-w-4xl mx-auto text-center">
+          <Typography as="h1">Conheça a Gaia Future Lab</Typography>
+          <Typography as="subtitle" className="text-zic-100">
+            Na Gaia Future Lab, acreditamos que a transparência e a inovação são
+            fundamentais para o sucesso de qualquer projeto. Nossa missão é
+            transformar ideias em soluções tecnológicas eficientes e
+            sustentáveis, sempre com um olhar para o futuro.
           </Typography>
         </header>
 
-        <section className="flex flex-col items-start space-y-4">
-          <section className="space-y-2">
-            <Typography as="pre-title">Nossa Missão</Typography>
-            <Typography as="p" className="text-gray-100">
-              Impulsionar a inovação tecnológica em direção a um futuro
-              sustentável. Nosso compromisso é desenvolver soluções de software
-              e data science que capacitem o setor privado e público a enfrentar
-              os desafios globais, promovendo o desenvolvimento ambiental,
-              social e econômico.
-            </Typography>
-          </section>
-
-          <footer className="flex gap-4 flex-col md:flex-row w-full">
-            <Link href="#our-values" prefetch={false}>
-              <Button className="w-full">Saber mais</Button>
-            </Link>
-            <Link href="#get-in-touch" prefetch={false}>
-              <Button variant="secondary" className="w-full">
-                Entrar em contato
-              </Button>
-            </Link>
-          </footer>
-        </section>
+        <div className="flex gap-2 w-fit mx-auto">
+          <Button>Saber mais</Button>
+          <Button variant="secondary">Entrar em contato</Button>
+        </div>
       </Container>
     </section>
   );

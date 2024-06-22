@@ -71,8 +71,8 @@ export const Hero = () => {
           <div className="space-y-2 max-w-xl flex-1">
             <Typography as="h1">Gaia Future lab.</Typography>
             <Typography as="subtitle" className="text-zinc-100">
-              Codificando o Futuro. Somos uma empresa de engenharia de software
-              preocupada com o futuro verde do planeta.
+              Codificando o Futuro. Somos a empresa de engenharia de software
+              preocupada com o futuro verde do planeta. A solução do seu amanhã está aqui!
             </Typography>
           </div>
 

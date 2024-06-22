@@ -1,10 +1,10 @@
 import Head from "next/head";
 
 import { AboutUsHero } from "@/components/templates/AboutUsHero";
-import { OurValues } from "@/components/templates/OurValues";
 import { OurTeam } from "@/components/templates/OurTeam";
 import { GetInTouch } from "@/components/templates/GetInTouch";
 import { Services } from "@/components/templates/Services";
+import { HowWeWork } from "@/components/templates/HowWeWork";
 
 export default function AboutUs() {
   return (
@@ -15,7 +15,7 @@ export default function AboutUs() {
       <main className="flex-1">
         <AboutUsHero />
 
-        <OurValues />
+        <HowWeWork />
 
         <OurTeam />
 

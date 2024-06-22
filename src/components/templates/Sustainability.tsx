@@ -73,17 +73,26 @@ export const Sustainability = () => {
           <section>
             <div className="space-y-4">
               <Typography as="p">
-                Na Gaia Future Lab, acreditamos que a tecnologia pode ser uma
-                força poderosa para mudanças positivas. Por isso, nos dedicamos
-                a desenvolver soluções inovadoras que impulsionam transformações
-                positivas para seu negócio e o mundo.
+                Na Gaia Future Lab, acreditamos que a tecnologia é uma força
+                poderosa para promover mudanças positivas. Nosso compromisso é
+                desenvolver soluções inovadoras que não apenas impulsionam o
+                sucesso dos nossos clientes, mas também contribuem para um mundo
+                melhor.
               </Typography>
               <Typography as="p">
-                Estamos comprometidos com a construção de um futuro verde,
-                adotando práticas empresariais responsáveis que contribuem para
-                um planeta mais saudável. Nossa missão é integrar excelência e
-                inovação em tudo o que fazemos, sempre com o objetivo de
-                promover um impacto positivo e sustentável.
+                Adotamos práticas empresariais responsáveis que visam a
+                construção de um futuro mais saudável e sustentável. Cada
+                projeto é concebido com a excelência e a inovação como pilares,
+                garantindo que nossas soluções tenham um impacto positivo e
+                duradouro.
+              </Typography>
+              <Typography as="p">
+                Nosso objetivo é integrar sustentabilidade em todas as etapas do
+                desenvolvimento, desde a concepção até a entrega, promovendo a
+                responsabilidade ambiental e social em tudo o que fazemos. Na
+                Gaia Future Lab, estamos empenhados em fazer a diferença,
+                utilizando a tecnologia para criar um futuro mais verde e
+                promissor para todos.
               </Typography>
             </div>
 

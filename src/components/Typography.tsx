@@ -4,15 +4,16 @@ import { tv } from "tailwind-variants";
 export const typography = tv({
   variants: {
     as: {
-      h1: "text-font font-bold tracking-tighter md:leading-tighter text-5xl md:text-7xl/tight lg:text-7xl/tight",
+      h1: "text-font font-bold tracking-tighter md:leading-tighter text-5xl md:text-7xl/tight",
       h2: "text-3xl md:text-5xl/tight font-bold tracking-tighter md:leading-tighter",
       h3: "text-font text-2xl font-bold",
       h4: "text-font text-md md:text-xl font-bold",
       h5: "text-font text-sm md:text-md font-bold",
-      p: "text-font text-md md:text-lg",
+      p: "text-font text-md md:text-lg text-zinc-400",
       span: "text-font text-base",
       strong: "text-font font-bold",
-      subtitle: "inline-block text-xl md:text-2xl tracking-tighter md:leading-tighter text-zinc-400",
+      subtitle:
+        "inline-block text-xl md:text-2xl tracking-tighter md:leading-tighter text-zinc-400",
       "pre-title":
         "inline-block rounded-lg bg-green-900 px-3 py-1 text-[0.75rem] md:text-sm",
     },

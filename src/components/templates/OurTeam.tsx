@@ -7,6 +7,7 @@ import { useAnimations } from "@/hooks/useAnimations";
 
 import { Typography } from "../Typography";
 import { Container } from "../Container";
+import { MemberCard } from "../organisms/MemberCard";
 
 export const OurTeam = () => {
   const { onMousePerspectiveAnimation } = useAnimations();
@@ -60,8 +61,38 @@ export const OurTeam = () => {
           </div>
         </header>
 
-        <section className="mx-auto grid max-w-5xl md:max-w-[1440px] items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
-          <div className="space-y-4 px-6 py-4 h-full">
+        <section className="flex gap-8 flex-wrap justify-center">
+          <MemberCard
+            avatar="/assets/avatar-1.jpg"
+            name="Jonas Forte"
+            role="Software Engineer"
+            about={[
+              "Jonas Forte, fundador da Gaia Future Lab, possui bacharelado em Ciência da Computação pela UEMS, Engenharia da Computação pela UFGD e especialização em Ciência e Análise de Dados pela USP. Com 12 anos de experiência, Jonas se destacou como gestor de equipes ágeis e arquiteto de soluções tecnológicas.",
+              "Jonas sempre sonhou em usar a tecnologia para criar soluções inovadoras. Na Gaia Future Lab, ele lidera a definição de projetos, promove a inovação e facilita a comunicação entre o negócio e o software, garantindo que as soluções entregues atendam perfeitamente às necessidades dos clientes. Sua experiência e visão estratégica asseguram que cada projeto seja bem-sucedido e alinhado com os objetivos dos clientes.",
+            ]}
+          />
+
+          <MemberCard
+            avatar="/assets/avatar-2.jpg"
+            name="Noé Machado"
+            role="Product Manager"
+            about={[
+              "Noé Machado, é Engenheiro Físico e PhD em Tecnologia Nuclear pela USP, é conhecido por seu rigor técnico-científico. Com vasta experiência em ESG, normas técnicas e desenvolvimento de projetos, ele se uniu à Gaia Future Lab para aplicar sua expertise na criação de soluções eficientes e eficazes.",
+              "Noé é responsável por entender e documentar as necessidades dos clientes, garantindo que as soluções propostas sejam as mais adequadas e que a observabilidade necessária esteja presente para a tomada de decisões precisas. Sua abordagem analítica e detalhista assegura que cada projeto seja executado com excelência, agregando valor significativo aos clientes.",
+            ]}
+          />
+
+          <MemberCard
+            avatar="/assets/avatar-3.jpg"
+            name="Odenir Gomes"
+            role="Software Engineer"
+            about={[
+              "Odenir Gomes é especialista em Análise e Desenvolvimento de Software. Formado pelo Instituto Federal de São Paulo (IFSP) e entusiasta de Educação em Tecnologia. Palestrante em diversos encontros e eventos da área. Sua habilidade em codificação e paixão por tecnologia o tornam fundamental para a Gaia Future Lab, onde atua como líder de desenvolvimento e arquitetura de aplicação.",
+              "Odenir gerencia e executa projetos, sempre buscando as tecnologias mais adequadas para cada cenário. Ele transforma ideias em soluções práticas e eficientes, garantindo a entrega de projetos de alta qualidade. Sua capacidade de coordenar o desenvolvimento e liderar equipes técnicas asseguram que os projetos sejam entregues dentro do prazo e superem as expectativas dos clientes.",
+            ]}
+          />
+
+          {/* <div className="space-y-4 px-6 py-4 h-full">
             <div className="flex justify-center">
               <Image
                 src="/assets/avatar-1.jpg"
@@ -103,7 +134,7 @@ export const OurTeam = () => {
             </div>
             <div className="space-y-2">
               <div>
-                <Typography as="h3">Noé Machado</Typography>
+                <Typography as="h3"></Typography>
                 <Typography as="p">Product Onwer Senior</Typography>
               </div>
 
@@ -145,7 +176,7 @@ export const OurTeam = () => {
                 expectativas dos clientes.
               </Typography>
             </div>
-          </div>
+          </div> */}
         </section>
       </Container>
     </section>

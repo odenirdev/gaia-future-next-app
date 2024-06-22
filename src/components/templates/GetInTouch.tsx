@@ -57,7 +57,7 @@ export const GetInTouch = ({ className, ...props }: GetInTouchProps) => {
           >
             <Button>Formulário para contato</Button>
           </a>
-          <Typography as="p" className="md:text-xs text-center">
+          <Typography as="p" className="text-xs md:text-xs text-center">
             Entraremos em contato com você o mais breve possível.
           </Typography>
         </div>

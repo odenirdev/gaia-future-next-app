@@ -10,7 +10,6 @@ import { Container } from "../Container";
 
 type ServicesProps = ComponentProps<"section">;
 
-
 export const Services = ({ className, ...props }: ServicesProps) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -78,8 +77,21 @@ export const Services = ({ className, ...props }: ServicesProps) => {
                   />
 
                   <Card.Title as="h4">
-                    Desenvolvimento de soluções personalizadas
+                    Desenvolvimento de Soluções Personalizadas
                   </Card.Title>
+                </Card.Root>
+              </li>
+              <li>
+                <Card.Root className="flex gap-4 items-center w-full">
+                  <Image
+                    src="/assets/service-5.svg"
+                    alt=""
+                    className="w-14"
+                    width={96}
+                    height={96}
+                  />
+
+                  <Card.Title as="h4">Automação de Processos</Card.Title>
                 </Card.Root>
               </li>
               <li>
@@ -93,8 +105,8 @@ export const Services = ({ className, ...props }: ServicesProps) => {
                   />
 
                   <Card.Title as="h4" className="text-md">
-                    Aplicação de Inteligência Artificial (IA) para o contexto do
-                    seu negócio
+                    Aplicação de Inteligência Artificial e Business Intelligence
+                    (IA e BI)
                   </Card.Title>
                 </Card.Root>
               </li>
@@ -126,17 +138,17 @@ export const Services = ({ className, ...props }: ServicesProps) => {
                   <Card.Title as="h4">Consultoria Estratégica em TI</Card.Title>
                 </Card.Root>
               </li>
-              <li className="md:col-span-2">
-                <Card.Root className="flex gap-4 items-center w-full max-w-[33.75rem] m-auto">
+              <li>
+                <Card.Root className="flex gap-4 items-center w-full">
                   <Image
-                    src="/assets/service-5.svg"
+                    src="/assets/service-4.svg"
                     alt=""
                     className="w-14"
                     width={96}
                     height={96}
                   />
 
-                  <Card.Title as="h4">Resoluções ágeis de problemas</Card.Title>
+                  <Card.Title as="h4">Consultoria em ESG e Melhores Práticas</Card.Title>
                 </Card.Root>
               </li>
             </ul>
