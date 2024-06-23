@@ -8,16 +8,16 @@ interface MemberCardProps {
 }
 
 export const MemberCard = (props: MemberCardProps) => {
-  const { avatar, name, role, about } = props;
+  const { name, role, about } = props;
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-[120px_1fr] md:max-w-[32rem] bg-zinc-900 p-6 rounded-3xl">
-      <div className="w-fit max-w-[10rem] mx-auto">
-        <figure className="overflow-hidden rounded-3xl">
+    <div className="md:max-w-[32rem] bg-zinc-900 p-6 rounded-3xl space-y-2">
+      <div className="w-fit max-w-[10rem]">
+        {/* <figure className="overflow-hidden rounded-3xl">
           <img src={avatar} width={160} height={160} alt="" />
-        </figure>
+        </figure> */}
 
-        <div className="space-y-1 px-1 py-2">
+        <div className="space-y-1">
           <Typography as="h4" className="leading-4 md:leading-5">
             {name}
           </Typography>
