@@ -88,7 +88,7 @@ export const HowWeWork = () => {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_480px] gap-8">
             <div className="space-y-8">
               <header>
-				<Typography as="pre-title">Como trabalhamos</Typography>
+                <Typography as="pre-title">Como trabalhamos</Typography>
                 <Typography as="h2">Foco no Objetivo</Typography>
                 <Typography as="subtitle">
                   Trabalhamos lado a lado com você para entender suas
@@ -128,13 +128,13 @@ export const HowWeWork = () => {
               </section>
             </div>
 
-            <figure className="hidden max-h-[500px] md:block bg-zinc-600 overflow-hidden rounded-3xl">
+            <div className="hidden md:block overflow-hidden rounded-3xl">
               <img
-                src="/assets/how-we-work-3.jpg"
-                className="object-cover w-full h-full scale-110"
+                src="/assets/how-we-work-1.svg"
+                className="object-contain w-full h-full"
                 alt=""
               />
-            </figure>
+            </div>
           </div>
         </Container>
       </section>
@@ -142,13 +142,13 @@ export const HowWeWork = () => {
       <section id="methodology" className="w-full py-12 md:py-24">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-[480px_1fr] gap-8">
-            <figure className="hidden max-h-[500px] md:block bg-zinc-600 overflow-hidden rounded-3xl">
+            <div className="hidden max-h-[500px] md:block overflow-hidden rounded-3xl">
               <img
-                src="/assets/how-we-work-2.jpg"
-                className="object-cover w-full h-full scale-110"
+                src="/assets/how-we-work-2.svg"
+                className="object-contain w-full h-full"
                 alt=""
               />
-            </figure>
+            </div>
 
             <section className="space-y-8">
               <header>
@@ -235,15 +235,15 @@ export const HowWeWork = () => {
               </section>
             </div>
 
-            <figure className="hidden max-h-[500px] md:block bg-zinc-600 overflow-hidden rounded-3xl">
+            <div className="hidden max-h-[500px] md:block overflow-hidden rounded-3xl">
               <Image
-                src="/assets/how-we-work-1.jpg"
+                src="/assets/how-we-work-3.svg"
                 alt=""
                 width={480}
                 height={480}
-                className="object-cover w-full h-full scale-150"
+                className="object-contain w-full h-full"
               />
-            </figure>
+            </div>
           </section>
         </Container>
       </section>
