@@ -66,9 +66,11 @@ export const HowWeWork = () => {
       .fromTo(
         "#transparency > div",
         {
+          x: -25,
           opacity: 0,
         },
         {
+          x: 0,
           opacity: 1,
           ease: "power1.in",
           duration: 0.6,
