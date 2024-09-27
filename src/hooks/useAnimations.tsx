@@ -34,8 +34,27 @@ export const useAnimations = () => {
     element.textContent = "";
     const spanElements: HTMLElement[] = [];
 
-    if (type === "word" || type === "char") {
-      const chars = text.split("");
+    if (type === "word") {
+      const words = text.split(" "); // Divide o texto em palavras
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.style.display = "inline-block";
+        wordSpan.style.opacity = "1";
+        wordSpan.textContent = word; // Define o conteúdo do span como a palavra
+
+        element.appendChild(wordSpan);
+        spanElements.push(wordSpan);
+
+        // Adiciona espaço após cada palavra, exceto a última
+        if (index < words.length - 1) {
+          const spaceSpan = document.createElement("span");
+          spaceSpan.innerHTML = "&nbsp;"; // Usando &nbsp; para espaços visíveis
+          element.appendChild(spaceSpan);
+          spanElements.push(spaceSpan);
+        }
+      });
+    } else if (type === "char") {
+      const chars = text.split(""); // Divide o texto em caracteres
       chars.forEach((char) => {
         const charSpan = document.createElement("span");
         charSpan.style.display = "inline-block";

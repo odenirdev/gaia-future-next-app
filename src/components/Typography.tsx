@@ -5,8 +5,8 @@ import { tv } from "tailwind-variants";
 export const typography = tv({
   variants: {
     as: {
-      h1: "text-font font-bold tracking-tighter md:leading-tighter text-5xl md:text-7xl/tight",
-      h2: "text-3xl md:text-5xl/tight font-bold tracking-tighter md:leading-tighter",
+      h1: "text-font font-bold tracking-tighter md:leading-tighter text-4xl md:text-7xl/tight",
+      h2: "text-3xl md:text-4xl/tight font-bold tracking-tighter md:leading-tighter",
       h3: "text-font text-2xl font-bold",
       h4: "text-font text-md md:text-xl font-bold",
       h5: "text-font text-sm md:text-md font-bold",
