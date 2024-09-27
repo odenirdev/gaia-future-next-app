@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ComponentProps, useEffect } from "react";
+import { ComponentProps, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -7,43 +7,32 @@ import { Typography } from "../Typography";
 import { Card } from "../Card";
 import { twMerge } from "tailwind-merge";
 import { Container } from "../Container";
+import { useAnimations } from "@/hooks/useAnimations";
 
 type ServicesProps = ComponentProps<"section">;
 
 export const Services = ({ className, ...props }: ServicesProps) => {
+  const { splitText } = useAnimations();
+
+  const headerTitleRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#services",
-          toggleActions: "play reverse play reverse",
-          start: "5% center",
-          end: "80% center",
-        },
-      })
-      .fromTo(
-        "#services > div > header",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.4,
-        }
-      )
-      .fromTo(
-        "#services > div > div",
-        { opacity: 0, y: 100 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.4,
-        }
-      );
-  }, []);
+    const heroTextEl = headerTitleRef.current;
+    if (heroTextEl) {
+      const chars = splitText(heroTextEl, "char");
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#services",
+            toggleActions: "play reverse play reverse",
+            start: "5% center",
+            end: "80% center",
+          },
+        })
+        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
+    }
+  }, [headerTitleRef]);
 
   return (
     <section
@@ -55,7 +44,9 @@ export const Services = ({ className, ...props }: ServicesProps) => {
         <header className="flex flex-col items-center justify-center text-center space-y-2">
           <Typography as="pre-title">Nossos Serviços</Typography>
 
-          <Typography as="h2">Soluções de Software</Typography>
+          <Typography as="h2" ref={headerTitleRef}>
+            Soluções de Software
+          </Typography>
           <Typography as="subtitle">
             Desde aplicações web personalizadas até aplicações móveis,
             oferecemos soluções digitais de ponta que impulsionam mudanças
@@ -148,7 +139,9 @@ export const Services = ({ className, ...props }: ServicesProps) => {
                     height={96}
                   />
 
-                  <Card.Title as="h4">Consultoria em ESG e Melhores Práticas</Card.Title>
+                  <Card.Title as="h4">
+                    Consultoria em ESG e Melhores Práticas
+                  </Card.Title>
                 </Card.Root>
               </li>
             </ul>

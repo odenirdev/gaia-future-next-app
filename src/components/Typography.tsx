@@ -1,3 +1,4 @@
+import { forwardRef, ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 import { tv } from "tailwind-variants";
 
@@ -20,7 +21,7 @@ export const typography = tv({
   },
 });
 
-type TypographyProps = {
+type TypographyProps = ComponentProps<"p"> & {
   as:
     | "h1"
     | "h2"
@@ -36,67 +37,113 @@ type TypographyProps = {
   className?: string;
 };
 
-export const Typography = ({ as, children, className }: TypographyProps) => {
-  switch (as) {
-    case "h1":
-      return (
-        <h1 className={twMerge(typography({ as: "h1" }), className)}>
-          {children}
-        </h1>
-      );
-    case "h2":
-      return (
-        <h2 className={twMerge(typography({ as: "h2" }), className)}>
-          {children}
-        </h2>
-      );
-    case "h3":
-      return (
-        <h3 className={twMerge(typography({ as: "h3" }), className)}>
-          {children}
-        </h3>
-      );
-    case "h4":
-      return (
-        <h4 className={twMerge(typography({ as: "h4" }), className)}>
-          {children}
-        </h4>
-      );
-    case "h5":
-      return (
-        <h5 className={twMerge(typography({ as: "h5" }), className)}>
-          {children}
-        </h5>
-      );
-    case "p":
-      return (
-        <p className={twMerge(typography({ as: "p" }), className)}>
-          {children}
-        </p>
-      );
-    case "span":
-      return (
-        <span className={twMerge(typography({ as: "span" }), className)}>
-          {children}
-        </span>
-      );
-    case "strong":
-      return (
-        <strong className={twMerge(typography({ as: "strong" }), className)}>
-          {children}
-        </strong>
-      );
-    case "pre-title":
-      return (
-        <span className={twMerge(typography({ as: "pre-title" }), className)}>
-          {children}
-        </span>
-      );
-    case "subtitle":
-      return (
-        <span className={twMerge(typography({ as: "subtitle" }), className)}>
-          {children}
-        </span>
-      );
+export const Typography = forwardRef<HTMLElement, TypographyProps>(
+  ({ as, children, className, ...props }, ref) => {
+    switch (as) {
+      case "h1":
+        return (
+          <h1
+            ref={ref as React.Ref<HTMLHeadingElement>}
+            className={twMerge(typography({ as: "h1" }), className)}
+            {...props}
+          >
+            {children}
+          </h1>
+        );
+      case "h2":
+        return (
+          <h2
+            ref={ref as React.Ref<HTMLHeadingElement>}
+            className={twMerge(typography({ as: "h2" }), className)}
+            {...props}
+          >
+            {children}
+          </h2>
+        );
+      case "h3":
+        return (
+          <h3
+            ref={ref as React.Ref<HTMLHeadingElement>}
+            className={twMerge(typography({ as: "h3" }), className)}
+            {...props}
+          >
+            {children}
+          </h3>
+        );
+      case "h4":
+        return (
+          <h4
+            ref={ref as React.Ref<HTMLHeadingElement>}
+            className={twMerge(typography({ as: "h4" }), className)}
+            {...props}
+          >
+            {children}
+          </h4>
+        );
+      case "h5":
+        return (
+          <h5
+            ref={ref as React.Ref<HTMLHeadingElement>}
+            className={twMerge(typography({ as: "h5" }), className)}
+            {...props}
+          >
+            {children}
+          </h5>
+        );
+      case "p":
+        return (
+          <p
+            ref={ref as React.Ref<HTMLParagraphElement>}
+            className={twMerge(typography({ as: "p" }), className)}
+            {...props}
+          >
+            {children}
+          </p>
+        );
+      case "span":
+        return (
+          <span
+            ref={ref as React.Ref<HTMLSpanElement>}
+            className={twMerge(typography({ as: "span" }), className)}
+            {...props}
+          >
+            {children}
+          </span>
+        );
+      case "strong":
+        return (
+          <strong
+            ref={ref as React.Ref<HTMLElement>}
+            className={twMerge(typography({ as: "strong" }), className)}
+            {...props}
+          >
+            {children}
+          </strong>
+        );
+      case "pre-title":
+        return (
+          <span
+            ref={ref as React.Ref<HTMLSpanElement>}
+            className={twMerge(typography({ as: "pre-title" }), className)}
+            {...props}
+          >
+            {children}
+          </span>
+        );
+      case "subtitle":
+        return (
+          <span
+            ref={ref as React.Ref<HTMLSpanElement>}
+            className={twMerge(typography({ as: "subtitle" }), className)}
+            {...props}
+          >
+            {children}
+          </span>
+        );
+    }
   }
-};
+);
+
+Typography.displayName = "Typography";
+
+export default Typography;

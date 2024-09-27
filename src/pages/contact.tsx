@@ -4,10 +4,32 @@ import { Typography } from "@/components/Typography";
 import { useAnimations } from "@/hooks/useAnimations";
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Contact() {
-  const { onMousePerspectiveAnimation } = useAnimations();
+  const { onMousePerspectiveAnimation, splitText } = useAnimations();
 
+  const headerTitleRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const heroTextEl = headerTitleRef.current;
+    if (heroTextEl) {
+      const chars = splitText(heroTextEl, "char");
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#hero",
+            toggleActions: "play reverse play none",
+            start: "top center",
+            end: "bottom center",
+          },
+        })
+        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
+    }
+  }, [headerTitleRef]);
   return (
     <>
       <Head>
@@ -28,12 +50,14 @@ export default function Contact() {
           <Container className="grid md:grid-cols-2 gap-8">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Typography as="h1">Gaia Future lab.</Typography>
-                <Typography as="p">
+                <Typography as="h1" ref={headerTitleRef}>
+                  Gaia Future lab.
+                </Typography>
+                <Typography as="p" className="text-zinc-100">
                   Construímos soluções de software personalizadas para empresas
                   de todos os tamanhos.
                 </Typography>
-                <Typography as="p">
+                <Typography as="p" className="text-zinc-100">
                   Quer desenvolver um software sob medida para o seu negócio?
                   Fale com a nossa equipe e vamos discutir seu projeto.
                 </Typography>

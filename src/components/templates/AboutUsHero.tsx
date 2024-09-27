@@ -1,48 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { Typography } from "../Typography";
 import { Button } from "../Button";
 import { Container } from "../Container";
+import { useAnimations } from "@/hooks/useAnimations";
 
 export const AboutUsHero = () => {
+  const { splitText } = useAnimations();
+
+  const headerTitleRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#about-us-hero",
-          toggleActions: "play reverse play none",
-          start: "top center",
-          end: "90% center",
-        },
-      })
-      .fromTo(
-        "#about-us-hero .container > header",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.4,
-        }
-      )
-      .fromTo(
-        "#about-us-hero .container > div",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.6,
-        }
-      );
-  }, []);
+    const heroTextEl = headerTitleRef.current;
+    if (heroTextEl) {
+      const chars = splitText(heroTextEl, "char");
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#about-us-hero",
+            toggleActions: "play reverse play none",
+            start: "top center",
+            end: "90% center",
+          },
+        })
+        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
+    }
+  }, [headerTitleRef]);
 
   return (
     <section
@@ -63,7 +51,9 @@ export const AboutUsHero = () => {
 
       <Container className="space-y-8">
         <header className="max-w-4xl mx-auto text-center">
-          <Typography as="h1">Conheça a Gaia Future Lab</Typography>
+          <Typography as="h1" ref={headerTitleRef}>
+            Conheça a Gaia Future Lab
+          </Typography>
           <Typography as="subtitle" className="text-zic-100">
             Na Gaia Future Lab, acreditamos que a transparência e a inovação são
             fundamentais para o sucesso de qualquer projeto. Nossa missão é

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -8,56 +8,30 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Typography } from "../Typography";
 import { Button } from "../Button";
 import { Container } from "../Container";
+import { useAnimations } from "@/hooks/useAnimations";
 
 export const Sustainability = () => {
+  const { splitText, onMousePerspectiveAnimation } = useAnimations();
+
+  const headerTitleRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#sustainability",
-          toggleActions: "play reverse play reverse",
-          start: "5% center",
-          end: "80% center",
-        },
-      })
-      .fromTo(
-        "#sustainability > div > div > header",
-        {
-          opacity: 0,
-          x: -100,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.4,
-        }
-      )
-      .fromTo(
-        "#sustainability > div > div > section",
-        {
-          opacity: 0,
-          x: -100,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.4,
-        }
-      )
-      .fromTo(
-        "#sustainability > div > figure",
-        { opacity: 0, scale: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.6,
-        }
-      );
-  }, []);
+    const heroTextEl = headerTitleRef.current;
+    if (heroTextEl) {
+      const chars = splitText(heroTextEl, "char");
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#sustainability",
+            toggleActions: "play reverse play reverse",
+            start: "5% center",
+            end: "80% center",
+          },
+        })
+        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
+    }
+  }, [headerTitleRef]);
 
   return (
     <section id="sustainability" className="w-full py-12 md:py-24">
@@ -65,7 +39,11 @@ export const Sustainability = () => {
         <div className="w-full max-w-[36rem]">
           <header className="mb-4">
             <Typography as="pre-title">Sustentabilidade</Typography>
-            <Typography as="h2">
+            <Typography
+              as="h2"
+              ref={headerTitleRef}
+              className="text-3xl md:text-3xl"
+            >
               Comprometidos com um futuro mais verde
             </Typography>
           </header>
@@ -111,7 +89,10 @@ export const Sustainability = () => {
           </section>
         </div>
 
-        <figure className="w-full max-w-[380px] h-[380px] mx-auto overflow-hidden rounded-3xl">
+        <figure
+          className="w-full max-w-[380px] h-[380px] mx-auto overflow-hidden rounded-3xl"
+          onMouseMove={onMousePerspectiveAnimation}
+        >
           <Image
             src="/assets/hero.jpg"
             width="600"

@@ -24,5 +24,37 @@ export const useAnimations = () => {
     }deg) translateZ(10px)`;
   };
 
-  return { onMousePerspectiveAnimation };
+  const splitText = (
+    element: HTMLElement,
+    type: "word" | "char" = "word"
+  ): HTMLElement[] => {
+    const text = element.textContent;
+    if (!text) return [];
+
+    element.textContent = "";
+    const spanElements: HTMLElement[] = [];
+
+    if (type === "word" || type === "char") {
+      const chars = text.split("");
+      chars.forEach((char) => {
+        const charSpan = document.createElement("span");
+        charSpan.style.display = "inline-block";
+        charSpan.style.opacity = "1";
+
+        // Verifica se é um espaço e usa &nbsp;
+        if (char === " ") {
+          charSpan.innerHTML = "&nbsp;";
+        } else {
+          charSpan.textContent = char;
+        }
+
+        element.appendChild(charSpan);
+        spanElements.push(charSpan);
+      });
+    }
+
+    return spanElements;
+  };
+
+  return { onMousePerspectiveAnimation, splitText };
 };

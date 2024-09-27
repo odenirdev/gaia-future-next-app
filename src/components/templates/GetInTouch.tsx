@@ -1,38 +1,37 @@
-import { ComponentProps, useEffect } from "react";
-import { gsap } from "gsap";
+import { ComponentProps, useEffect, useRef } from "react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { Button } from "../Button";
 import { Typography } from "../Typography";
 import { Container } from "../Container";
 import { twMerge } from "tailwind-merge";
+import { useAnimations } from "@/hooks/useAnimations";
 
 type GetInTouchProps = ComponentProps<"section">;
 
 export const GetInTouch = ({ className, ...props }: GetInTouchProps) => {
+  const { splitText } = useAnimations();
+
+  const headerTitleRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#get-in-touch",
-          toggleActions: "play none reverse none",
-          start: "top 600",
-          end: "150 600",
-        },
-      })
-      .fromTo(
-        "#get-in-touch > div",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: "power1.in",
-          duration: 0.8,
-        }
-      );
-  }, []);
+    const heroTextEl = headerTitleRef.current;
+    if (heroTextEl) {
+      const chars = splitText(heroTextEl, "char");
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#get-in-touch",
+            toggleActions: "play none reverse none",
+            start: "top 600",
+            end: "150 600",
+          },
+        })
+        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
+    }
+  }, [headerTitleRef]);
 
   return (
     <section
@@ -42,7 +41,9 @@ export const GetInTouch = ({ className, ...props }: GetInTouchProps) => {
     >
       <Container className="space-y-8">
         <header className="space-y-1 md:space-y-2 text-center">
-          <Typography as="h2">Entrar em contato</Typography>
+          <Typography as="h2" ref={headerTitleRef}>
+            Entrar em contato
+          </Typography>
           <Typography as="p" className="max-w-[44rem] mx-auto">
             Quer desenvolver um software sob medida para o seu negócio? Fale com
             a nossa equipe e vamos discutir seu projeto.
