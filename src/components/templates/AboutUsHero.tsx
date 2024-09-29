@@ -52,7 +52,7 @@ export const AboutUsHero = () => {
       <Container className="space-y-8">
         <header className="max-w-4xl mx-auto text-center">
           <Typography as="h1" ref={headerTitleRef}>
-            Conheça a Gaia Future Lab
+            Conheça a Gaia Future
           </Typography>
           <Typography as="subtitle" className="text-zic-100">
             Na Gaia Future Lab, acreditamos que a transparência e a inovação são
