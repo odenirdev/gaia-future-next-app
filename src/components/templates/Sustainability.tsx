@@ -1,13 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "../Typography";
-import { Button } from "../Button";
-import { Container } from "../Container";
+import { Typography } from "../atoms/Typography";
+import { Container } from "../molecules/Container";
 import { useAnimations } from "@/hooks/useAnimations";
 
 export const Sustainability = () => {
@@ -82,9 +80,6 @@ export const Sustainability = () => {
         >
           Saber mais
         </Link> */}
-              <Link href="#get-in-touch" prefetch={false}>
-                <Button variant="secondary">Entrar em contato</Button>
-              </Link>
             </div>
           </section>
         </div>

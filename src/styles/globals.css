@@ -8,19 +8,19 @@
   }
 
   body {
-    @apply bg-zinc-800 text-zinc-100;
+    @apply bg-[#e6e6e6] text-zinc-800;
 
     font-family: var(--font-inter), serif;
   }
 
-  h1,
+  /* h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     font-family: var(--font-ubuntu-mono), serif;
-  }
+  } */
 
   #menu-toggle:checked ~ #menu {
     display: flex;

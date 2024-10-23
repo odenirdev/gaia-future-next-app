@@ -1,6 +1,6 @@
-import { Button } from "@/components/Button";
-import { Container } from "@/components/Container";
-import { Typography } from "@/components/Typography";
+import { Button } from "@/components/atoms/Button";
+import { Container } from "@/components/molecules/Container";
+import { Typography } from "@/components/atoms/Typography";
 import { useAnimations } from "@/hooks/useAnimations";
 import Head from "next/head";
 import Image from "next/image";
@@ -11,25 +11,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default function Contact() {
   const { onMousePerspectiveAnimation, splitText } = useAnimations();
 
-  const headerTitleRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    const heroTextEl = headerTitleRef.current;
-    if (heroTextEl) {
-      const chars = splitText(heroTextEl, "char");
-
-      gsap.registerPlugin(ScrollTrigger);
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#hero",
-            toggleActions: "play reverse play none",
-            start: "top center",
-            end: "bottom center",
-          },
-        })
-        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
-    }
-  }, [headerTitleRef]);
   return (
     <>
       <Head>
@@ -37,19 +18,31 @@ export default function Contact() {
       </Head>
       <main className="flex-1">
         <article className="w-full min-h-[calc(100vh-5.5rem)] pt-[6.875rem] pb-[3rem] md:pb-[6.875rem] flex items-center relative">
-          <Image
-            width={1920}
-            height={1080}
-            src="/assets/bg-hero.gif"
-            alt=""
-            className="absolute z-[-1] object-cover top-0 left-0 h-full w-full mix-blend-overlay"
-            unoptimized
-            priority
-          />
+          <div className="absolute inset-0 z-[-1] ">
+            <div className="absolute bottom-0 top-[40%] left-0 right-0 bg-gradient-to-b from-transparent to-green-950 to-30%"></div>
+            <div className="absolute inset-0 bg-[rgba(0,0,0,0.62)]"></div>
+            <Image
+              width={1920}
+              height={1080}
+              src="/assets/bg-hero.gif"
+              alt=""
+              className="object-cover h-full w-full"
+              unoptimized
+              priority
+            />
+          </div>
 
           <Container className="grid md:grid-cols-2 gap-8">
             <div className="space-y-8">
-              <div className="space-y-4">
+              <Typography
+                as="h2"
+                className="text-zinc-100 font-light tracking-normal"
+              >
+                Entre em contato e um dos{" "}
+                <span className="text-green-500">nossos especialistas</span> irá
+                atendê-lo
+              </Typography>
+              {/* <div className="space-y-4">
                 <Typography as="h1" ref={headerTitleRef}>
                   Gaia Future lab.
                 </Typography>
@@ -61,24 +54,26 @@ export default function Contact() {
                   Quer desenvolver um software sob medida para o seu negócio?
                   Fale com a nossa equipe e vamos discutir seu projeto.
                 </Typography>
-              </div>
+              </div> */}
 
-              <a
+              {/* <a
                 href="https://forms.gle/kKBrNuLc1gpKXJC89"
                 target="_blank"
                 className="inline-block"
               >
                 <Button>Formulário para contato</Button>
-              </a>
+              </a> */}
             </div>
+            
             <div
-              className="mx-auto my-12 h-[14rem] w-full max-w-[25rem] bg-white/5 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 space-y-4"
+              className="h-[14rem] w-full max-w-[25rem] bg-white/5 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 space-y-4"
               onMouseMove={onMousePerspectiveAnimation}
             >
               <div className="flex items-center justify-between">
-                <Typography as="h2" className="md:text-md">
+                <Typography as="h2" className="md:text-md text-zinc-100">
                   Entrar em contato
                 </Typography>
+
                 <div className="w-12 h-12">
                   <Image
                     src="/assets/logo.svg"
@@ -92,11 +87,15 @@ export default function Contact() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   {/* <MailIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" /> */}
-                  <Typography as="p">contato@gaiafuture.com.br</Typography>
+                  <Typography as="p" className="text-zinc-300">
+                    contato@gaiafuture.com.br
+                  </Typography>
                 </div>
                 <div className="flex items-center gap-2">
                   {/* <PhoneIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" /> */}
-                  <Typography as="p">(11) 95042-1954</Typography>
+                  <Typography as="p" className="text-zinc-300">
+                    (11) 95042-1954
+                  </Typography>
                 </div>
               </div>
             </div>

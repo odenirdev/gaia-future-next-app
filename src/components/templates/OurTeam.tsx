@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { useAnimations } from "@/hooks/useAnimations";
 
-import { Typography } from "../Typography";
-import { Container } from "../Container";
+import { Typography } from "../atoms/Typography";
+import { Container } from "../molecules/Container";
 import { MemberCard } from "../organisms/MemberCard";
 
 export const OurTeam = () => {

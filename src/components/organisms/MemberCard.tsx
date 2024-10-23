@@ -1,4 +1,4 @@
-import { Typography } from "../Typography";
+import { Typography } from "../atoms/Typography";
 
 interface MemberCardProps {
   avatar: string;

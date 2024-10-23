@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
-import { Typography } from "./Typography";
+import { Typography } from "../atoms/Typography";
 
 const Root = ({ children, className, ...props }: ComponentProps<"div">) => {
   return (

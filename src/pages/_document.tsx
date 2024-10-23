@@ -115,8 +115,11 @@ export default function Document() {
       </Head>
       <body>
         <header className="flex items-center justify-between h-[6.875rem] w-full mx-auto px-9 absolute z-[10]">
-          <Link href="/">
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="" width={44} height={44} />
+            <span className="text-2xl font-light text-zinc-200 tracking-normal">
+              Gaia Future lab.
+            </span>
           </Link>
 
           <input type="checkbox" id="menu-toggle" className="hidden peer" />
@@ -141,7 +144,7 @@ export default function Document() {
             id="menu"
             className="hidden absolute left-0 top-[6.875rem] w-full px-4  md:static md:block md:w-fit"
           >
-            <ul className="flex flex-1 flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4">
+            <ul className="flex flex-1 flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4 text-zinc-200">
               <li>
                 <Link
                   href="/"
@@ -169,14 +172,14 @@ export default function Document() {
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link
                   href="/about-us"
                   className="text-sm font-medium hover:underline underline-offset-4"
                 >
                   Sobre nós
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link
@@ -192,8 +195,8 @@ export default function Document() {
 
         <Main />
 
-        <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-          <p className="text-xs text-zinc-500">
+        <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 bg-green-600">
+          <p className="text-xs text-zinc-200">
             &copy; 2024 Gaia Future Lab. Todos os direitos reservados.
           </p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">

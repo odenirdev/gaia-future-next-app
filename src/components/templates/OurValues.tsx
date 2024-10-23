@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "../Typography";
-import { Card } from "../Card";
-import { Container } from "../Container";
+import { Typography } from "../atoms/Typography";
+import { Card } from "../molecules/Card";
+import { Container } from "../molecules/Container";
 
 export const OurValues = () => {
   useEffect(() => {

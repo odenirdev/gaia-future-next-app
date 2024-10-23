@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "../Typography";
-import { Button } from "../Button";
-import { Container } from "../Container";
+import { Typography } from "../atoms/Typography";
+import { Button } from "../atoms/Button";
+import { Container } from "../molecules/Container";
 import { useAnimations } from "@/hooks/useAnimations";
 
 export const AboutUsHero = () => {
@@ -54,7 +54,7 @@ export const AboutUsHero = () => {
           <Typography as="h1" ref={headerTitleRef}>
             Conheça a Gaia Future
           </Typography>
-          <Typography as="subtitle" className="text-zic-100">
+          <Typography as="subtitle">
             Na Gaia Future Lab, acreditamos que a transparência e a inovação são
             fundamentais para o sucesso de qualquer projeto. Nossa missão é
             transformar ideias em soluções tecnológicas eficientes e

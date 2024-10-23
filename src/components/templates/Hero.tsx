@@ -1,65 +1,70 @@
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import gsap, { SteppedEase, TimelineMax } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { useAnimations } from "@/hooks/useAnimations";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Typography } from "../Typography";
-import { Button } from "../Button";
-import { Container } from "../Container";
+import { Typography } from "../atoms/Typography";
+import { Button } from "../atoms/Button";
+import { Container } from "../molecules/Container";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Hero = () => {
-  const { onMousePerspectiveAnimation, splitText } = useAnimations();
+  const { onMousePerspectiveAnimation } = useAnimations();
 
-  const headerTitleRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    const heroTextEl = headerTitleRef.current;
-    if (heroTextEl) {
-      const chars = splitText(heroTextEl, "char");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top 80%",
+        end: "bottom 20%",
+      },
+    });
 
-      gsap.registerPlugin(ScrollTrigger);
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#hero",
-            toggleActions: "play reverse play none",
-            start: "top center",
-            end: "bottom center",
-          },
-        })
-        .staggerFrom(chars, 0.02, { opacity: 0 }, 0.08);
-    }
-  }, [headerTitleRef]);
+    tl.fromTo(
+      "#hero h1",
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: "power1.inOut", delay: 0.6 }
+    )
+      .fromTo(
+        "#hero figure",
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 1, ease: "power1.inOut", delay: 0.2 },
+        "-=0.5"
+      )
+      .fromTo(
+        "#hero button",
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "power1.out",
+          stagger: 0.2,
+          delay: 0.2,
+        }
+      );
+  }, []);
 
   return (
     <section
       id="hero"
-      className="w-full min-h-[calc(100vh-4rem)] pt-[6.875rem] pb-[3rem] md:pb-[6.875rem] relative flex items-center"
+      className="w-full min-h-[50vh] pt-[6.875rem] flex items-center"
     >
-      <div className="absolute inset-0 z-[-1] mix-blend-overlay">
-        <Image
-          width={1920}
-          height={1080}
-          src="/assets/bg-hero.gif"
-          alt=""
-          className="object-cover h-full w-full"
-          unoptimized
-          priority
-        />
-      </div>
-
-      <Container className="flex flex-col px-8 md:flex-row gap-8 md:gap-4 items-center">
-        <section className="flex flex-col gap-8">
-          <div className="space-y-2 max-w-xl flex-1">
-            <Typography as="h1" ref={headerTitleRef}>
-              Gaia Future lab.
-            </Typography>
-            <Typography as="subtitle" className="text-zinc-100">
-              Codificando o Futuro. Somos a empresa de engenharia de software
-              preocupada com o futuro verde do planeta. A solução do seu amanhã
-              está aqui!
+      <Container className="flex flex-col px-8 md:flex-row gap-8 md:gap-16 items-center">
+        <section className="flex flex-col gap-8 py-8">
+          <div className="space-y-2 max-w-xl">
+            <Typography
+              as="h1"
+              className="text-zinc-100 font-light tracking-normal"
+            >
+              <span className="text-green-500 font-bold">
+                Codificando o Futuro!
+              </span>{" "}
+              A solução do seu amanhã está aqui
             </Typography>
           </div>
 
@@ -76,7 +81,7 @@ export const Hero = () => {
         </section>
 
         <figure
-          className="w-[260px] h-[260px] md:w-[360px] md:h-[360px] mx-auto"
+          className="w-[260px] h-[260px] md:w-[360px] md:h-[360px]"
           onMouseMove={onMousePerspectiveAnimation}
         >
           <Image

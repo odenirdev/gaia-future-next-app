@@ -2,8 +2,8 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Container } from "../Container";
-import { Typography } from "../Typography";
+import { Container } from "../molecules/Container";
+import { Typography } from "../atoms/Typography";
 
 import { useEffect } from "react";
 
