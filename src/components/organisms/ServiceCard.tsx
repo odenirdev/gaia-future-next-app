@@ -17,7 +17,7 @@ export const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <Card.Root
-      className="space-y-2 p-8  bg-green-950 bg-opacity-45 backdrop-blur-sm"
+      className="space-y-2 p-8  bg-zinc-950 bg-opacity-45 backdrop-blur-sm"
       {...props}
     >
       <Image

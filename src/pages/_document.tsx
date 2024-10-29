@@ -123,7 +123,7 @@ export default function Document() {
           </Link>
 
           <input type="checkbox" id="menu-toggle" className="hidden peer" />
-          <label htmlFor="menu-toggle" className="cursor-pointer md:hidden">
+          <label htmlFor="menu-toggle" className="cursor-pointer md:hidden text-zinc-100">
             <svg
               className="w-6 h-6 text-zinc-20"
               fill="none"

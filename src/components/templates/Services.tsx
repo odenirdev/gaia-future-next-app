@@ -53,9 +53,9 @@ export const Services = ({ className, ...props }: ServicesProps) => {
               O que <span className="text-green-500">fazemos</span>
             </Typography>
             <Typography as="p" className="text-zinc-100">
-              Somos seu parceiro na construção de um futuro sustentável, usando
-              a transformação digital para ajudar empresas e governos a
-              enfrentar desafios e impulsionar o crescimento.
+              Somos seu parceiro em transformar desafios em oportunidades de
+              crescimento sustentável, através de inovação tecnológica e
+              soluções digitais sob medida.
             </Typography>
           </header>
 

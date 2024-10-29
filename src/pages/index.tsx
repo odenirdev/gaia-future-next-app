@@ -7,6 +7,7 @@ import { Sustainability } from "@/components/templates/Sustainability";
 import { GetInTouch } from "@/components/templates/GetInTouch";
 import { Services } from "@/components/templates/Services";
 import Image from "next/image";
+import { OurProducts } from "@/components/templates/OurProducts";
 
 export default function Home() {
   return (
@@ -34,6 +35,23 @@ export default function Home() {
 
           <Services />
         </div>
+
+        {/* <div className="relative">
+          <div className="absolute inset-0 z-[-1] ">
+            <div className="absolute inset-0 bg-[rgba(0,0,0,0.62)]"></div>
+            <Image
+              width={1920}
+              height={1080}
+              src="/assets/bg-products.gif"
+              alt=""
+              className="object-cover bg-center h-full w-full"
+              unoptimized
+              priority
+            />
+          </div>
+
+          <OurProducts />
+        </div> */}
 
         <Sustainability />
 

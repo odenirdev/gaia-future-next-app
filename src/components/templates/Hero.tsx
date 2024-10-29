@@ -61,10 +61,11 @@ export const Hero = () => {
               as="h1"
               className="text-zinc-100 font-light tracking-normal"
             >
+              A Tecnologia que{" "}
               <span className="text-green-500 font-bold">
-                Codificando o Futuro!
+                Impulsiona Seu Negócio
               </span>{" "}
-              A solução do seu amanhã está aqui
+              para o Futuro
             </Typography>
           </div>
 
