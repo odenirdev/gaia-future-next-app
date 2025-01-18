@@ -1,5 +1,7 @@
 "use client";
 
+import { LogoIcon } from "@/components/atoms/Logo";
+import { Header } from "@/components/templates/Header";
 import { Html, Head, Main, NextScript } from "next/document";
 import Image from "next/image";
 import Link from "next/link";
@@ -114,84 +116,7 @@ export default function Document() {
         <meta property="twitter:image" content="/assets/hero.jpg" />
       </Head>
       <body>
-        <header className="flex items-center justify-between h-[6.875rem] w-full mx-auto px-9 absolute z-[10]">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/logo.svg" alt="" width={44} height={44} />
-            <span className="text-2xl font-light text-zinc-200 tracking-normal">
-              Gaia Future lab.
-            </span>
-          </Link>
-
-          <input type="checkbox" id="menu-toggle" className="hidden peer" />
-          <label htmlFor="menu-toggle" className="cursor-pointer md:hidden text-zinc-100">
-            <svg
-              className="w-6 h-6 text-zinc-20"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </label>
-
-          <nav
-            id="menu"
-            className="hidden absolute left-0 top-[6.875rem] w-full px-4  md:static md:block md:w-fit"
-          >
-            <ul className="flex flex-1 flex-col bg-[#252525] p-4 rounded md:bg-transparent md:flex-row gap-4 text-zinc-200">
-              <li>
-                <Link
-                  href="/"
-                  className="text-sm font-medium hover:underline underline-offset-4"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/#services"
-                  className="text-sm font-medium hover:underline underline-offset-4"
-                >
-                  Serviços
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/#sustainability"
-                  className="text-sm font-medium hover:underline underline-offset-4"
-                >
-                  Sustentabilidade
-                </Link>
-              </li>
-
-              {/* <li>
-                <Link
-                  href="/about-us"
-                  className="text-sm font-medium hover:underline underline-offset-4"
-                >
-                  Sobre nós
-                </Link>
-              </li> */}
-
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm font-medium hover:underline underline-offset-4"
-                >
-                  Contato
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
 
         <Main />
 
@@ -203,9 +128,15 @@ export default function Document() {
             {/* <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
               Termos de serviço
             </Link>
-            <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+          */}
+
+            <Link
+              href="/privacy-policy"
+              className="text-xs hover:underline underline-offset-4 "
+              prefetch={false}
+            >
               Privacidade
-            </Link> */}
+            </Link>
           </nav>
         </footer>
 

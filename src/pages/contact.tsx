@@ -18,15 +18,14 @@ export default function Contact() {
       </Head>
       <main className="flex-1">
         <article className="w-full min-h-[calc(100vh-5.5rem)] pt-[6.875rem] pb-[3rem] md:pb-[6.875rem] flex items-center relative">
-          <div className="absolute inset-0 z-[-1] ">
-            <div className="absolute bottom-0 top-[40%] left-0 right-0 bg-gradient-to-b from-transparent to-green-950 to-30%"></div>
-            <div className="absolute inset-0 bg-[rgba(0,0,0,0.62)]"></div>
+          <div className="absolute inset-0 z-[-2] overflow-hidden">
+            <div className="absolute  bg-[rgba(0,0,0,0.6)] inset-0 z-[-1]"></div>
             <Image
               width={1920}
               height={1080}
               src="/assets/bg-hero.gif"
               alt=""
-              className="object-cover h-full w-full"
+              className="object-cover   h-full w-full scale-125 mix-blend-overlay"
               unoptimized
               priority
             />
@@ -64,7 +63,7 @@ export default function Contact() {
                 <Button>Formulário para contato</Button>
               </a> */}
             </div>
-            
+
             <div
               className="h-[14rem] w-full max-w-[25rem] bg-white/5 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 space-y-4"
               onMouseMove={onMousePerspectiveAnimation}
