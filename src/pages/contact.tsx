@@ -66,7 +66,12 @@ export default function Contact() {
 
             <div
               className="h-[14rem] w-full max-w-[25rem] bg-white/5 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 space-y-4"
-              onMouseMove={onMousePerspectiveAnimation}
+              onMouseMove={(event) =>
+                onMousePerspectiveAnimation(
+                  event.currentTarget,
+                  event as unknown as MouseEvent
+                )
+              }
             >
               <div className="flex items-center justify-between">
                 <Typography as="h2" className="md:text-md text-zinc-100">
