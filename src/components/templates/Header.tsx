@@ -95,7 +95,7 @@ export const Header = () => {
                 duration-150
             "
             >
-              Sustentabilidade
+              Sobre nós
             </Link>
           </li>
           <li>

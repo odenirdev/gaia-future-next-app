@@ -9,7 +9,8 @@ import { Container } from "../molecules/Container";
 import { useAnimations } from "@/hooks/useAnimations";
 
 export const Sustainability = () => {
-  const { splitText, onMousePerspectiveAnimation } = useAnimations();
+  const { splitText, onMouseLightAnimation, removeMouseLight } =
+    useAnimations();
 
   const headerTitleRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -36,7 +37,7 @@ export const Sustainability = () => {
       <Container className="flex flex-col md:flex-row gap-8 items-center justify-between">
         <div className="w-full max-w-[36rem]">
           <header className="mb-4">
-            <Typography as="pre-title">Sustentabilidade</Typography>
+            <Typography as="pre-title">Sobre nós</Typography>
             <Typography
               as="h2"
               ref={headerTitleRef}
@@ -86,7 +87,10 @@ export const Sustainability = () => {
 
         <figure
           className="w-full max-w-[380px] h-[380px] mx-auto overflow-hidden rounded-3xl"
-          onMouseMove={onMousePerspectiveAnimation}
+          onMouseMove={(event) => {
+            onMouseLightAnimation(event as unknown as MouseEvent);
+          }}
+          onMouseOut={removeMouseLight}
         >
           <Image
             src="/assets/hero.jpg"

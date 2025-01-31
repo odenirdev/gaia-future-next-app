@@ -47,6 +47,17 @@ export const Hero = () => {
           delay: 0.2,
         }
       );
+
+    const heroFigure = document.querySelector("#hero-figure") as HTMLElement;
+    document.body.addEventListener("mousemove", (event) => {
+      onMousePerspectiveAnimation(heroFigure, event);
+    });
+
+    return () => {
+      document.body.removeEventListener("mousemove", (event) => {
+        onMousePerspectiveAnimation(heroFigure, event);
+      });
+    };
   }, []);
 
   return (
@@ -83,7 +94,7 @@ export const Hero = () => {
 
         <figure
           className="w-[260px] h-[260px] md:w-[360px] md:h-[360px]"
-          onMouseMove={onMousePerspectiveAnimation}
+          id="hero-figure"
         >
           <Image
             src="/assets/logo.svg"

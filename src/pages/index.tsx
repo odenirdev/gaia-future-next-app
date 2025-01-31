@@ -7,7 +7,6 @@ import { Sustainability } from "@/components/templates/Sustainability";
 import { GetInTouch } from "@/components/templates/GetInTouch";
 import { Services } from "@/components/templates/Services";
 import Image from "next/image";
-import { OurProducts } from "@/components/templates/OurProducts";
 
 export default function Home() {
   return (

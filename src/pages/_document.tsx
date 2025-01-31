@@ -1,9 +1,7 @@
 "use client";
 
-import { LogoIcon } from "@/components/atoms/Logo";
 import { Header } from "@/components/templates/Header";
 import { Html, Head, Main, NextScript } from "next/document";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Document() {

@@ -1,14 +1,15 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useEffect } from "react";
 
 export const useAnimations = () => {
-  const onMousePerspectiveAnimation: MouseEventHandler<HTMLElement> = (
-    event
+  const onMousePerspectiveAnimation = (
+    target: HTMLElement,
+    event: MouseEvent
   ) => {
     if (window.innerWidth < 768) return;
 
     const SCALE_X = 4;
     const SCALE_Y = 8;
-    const card = event.currentTarget;
+    const card = target;
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
@@ -75,5 +76,39 @@ export const useAnimations = () => {
     return spanElements;
   };
 
-  return { onMousePerspectiveAnimation, splitText };
+  const onMouseLightAnimation = (event: MouseEvent) => {
+    let light = document.getElementById("mouse-light");
+    if (!light) {
+      light = document.createElement("div");
+      light.id = "mouse-light";
+      light.style.position = "absolute";
+      light.style.width = "100px";
+      light.style.height = "100px";
+      light.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+      light.style.borderRadius = "50%";
+      light.style.pointerEvents = "none";
+      light.style.transition = "transform 0.1s ease";
+      light.style.boxShadow = "0 0 30px 20px rgba(255, 255, 255, 0.2)";
+      document.body.appendChild(light);
+    }
+
+    const x = event.clientX + window.scrollX - light.offsetWidth / 2;
+    const y = event.clientY + window.scrollY - light.offsetHeight / 2;
+    light.style.left = `${x}px`;
+    light.style.top = `${y}px`;
+  };
+
+  const removeMouseLight = () => {
+    const light = document.getElementById("mouse-light");
+    if (light) {
+      document.body.removeChild(light);
+    }
+  };
+
+  return {
+    onMousePerspectiveAnimation,
+    onMouseLightAnimation,
+    splitText,
+    removeMouseLight,
+  };
 };
